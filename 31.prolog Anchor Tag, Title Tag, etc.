@@ -1,0 +1,14 @@
+% Facts
+mammal(cat).
+mammal(dog).
+bird(sparrow).
+bird(eagle).
+fish(salmon).
+fish(tuna).
+
+% Rules
+has_feathers(X) :- bird(X).
+has_fur(X) :- mammal(X).
+lays_eggs(X) :- bird(X).
+gives_birth(X) :- mammal(X).
+lives_in_water(X) :- fish(X).
