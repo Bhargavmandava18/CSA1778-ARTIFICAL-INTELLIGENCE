@@ -1,0 +1,15 @@
+% Rules to solve Towers of Hanoi
+hanoi(1, Source, _, Target, Moves) :-
+    append([move(Source, Target)], [], Moves).
+hanoi(N, Source, Auxiliary, Target, Moves) :-
+    N > 1,
+    N1 is N - 1,
+    hanoi(N1, Source, Target, Auxiliary, Moves1),
+    append([move(Source, Target)], Moves1, Moves2),
+    hanoi(N1, Auxiliary, Source, Target, Moves3),
+    append(Moves2, Moves3, Moves).
+
+% Predicates to display moves
+move(A, B) :-
+    format('Move a disc from ~w to ~w.~n', [A, B]).
+
