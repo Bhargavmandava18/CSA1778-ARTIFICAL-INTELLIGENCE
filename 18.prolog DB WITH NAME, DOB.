@@ -1,0 +1,14 @@
+% Facts representing the database
+person(bhargav, date(2003,9, 24)).
+person(yaswanth, date(1985, 8, 20)).
+person(rakesh, date(2000, 2, 10)).
+person(vamsi, date(1978, 11, 3)).
+
+% Rules to query the database
+age(Person, Age) :-
+    person(Person, DOB),
+    current_date(CurrentYear, CurrentMonth, CurrentDay),
+    DOB = date(Year, Month, Day),
+    Age is CurrentYear - Year - (if(CurrentMonth < Month; (CurrentMonth = Month, CurrentDay < Day), 1, 0)).
+
+current_date(2023, 8, 11).
