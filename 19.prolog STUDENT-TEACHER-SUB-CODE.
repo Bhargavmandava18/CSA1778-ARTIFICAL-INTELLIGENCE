@@ -1,0 +1,16 @@
+% Facts representing relationships
+teacher(ms_smith, math).
+teacher(mr_jones, physics).
+teacher(mr_doe, chemistry).
+
+student(john, math).
+student(lisa, physics).
+student(alex, chemistry).
+student(emma, math).
+
+% Rules to define relationships
+teaches(Teacher, Subject) :-
+    teacher(Teacher, Subject).
+
+learns(Student, Subject) :-
+    student(Student, Subject).
