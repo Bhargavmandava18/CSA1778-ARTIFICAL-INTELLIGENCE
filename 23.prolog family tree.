@@ -1,0 +1,128 @@
+% Facts representing family relationships
+parent(john, anna).
+parent(john, mary).
+parent(anna, emma).
+parent(anna, liam).
+parent(mary, sophia).
+parent(mary, ethan).
+parent(emily, sophia).
+parent(emily, ethan).
+
+% Rules to define family relationships
+father(Father, Child) :-
+    parent(Father, Child),
+    male(Father).
+
+mother(Mother, Child) :-
+    parent(Mother, Child),
+    female(Mother).
+
+% Male and female predicates (can be expanded)
+male(john).
+male(liam).
+male(ethan).
+
+female(anna).
+female(mary).
+female(emma).
+female(sophia).
+female(emily).
+
+% Rules to define grandparent and sibling relationships
+grandparent(Grandparent, Grandchild) :-
+    parent(Grandparent, Parent),
+    parent(Parent, Grandchild).
+
+sibling(Sibling1, Sibling2) :-
+% Facts representing family relationships
+parent(john, anna).
+parent(john, mary).
+parent(anna, emma).
+parent(anna, liam).
+parent(mary, sophia).
+parent(mary, ethan).
+parent(emily, sophia).
+parent(emily, ethan).
+
+% Rules to define family relationships
+father(Father, Child) :-
+    parent(Father, Child),
+    male(Father).
+
+mother(Mother, Child) :-
+    parent(Mother, Child),
+    female(Mother).
+
+% Male and female predicates (can be expanded)
+male(john).
+male(liam).
+male(ethan).
+
+female(anna).
+female(mary).
+female(emma).
+female(sophia).
+female(emily).
+
+% Rules to define grandparent and sibling relationships
+grandparent(Grandparent, Grandchild) :-
+    parent(Grandparent, Parent),
+    parent(Parent, Grandchild).
+
+sibling(Sibling1, Sibling2) :-% Facts representing family relationships
+parent(john, anna).
+parent(john, mary).
+parent(anna, emma).
+parent(anna, liam).
+parent(mary, sophia).
+parent(mary, ethan).
+parent(emily, sophia).
+parent(emily, ethan).
+
+% Rules to define family relationships
+father(Father, Child) :-
+    parent(Father, Child),
+    male(Father).
+
+mother(Mother, Child) :-
+    parent(Mother, Child),
+    female(Mothe% Facts representing family relationships
+parent(john, anna).
+parent(john, mary).
+parent(anna, emma).
+parent(anna, liam).
+parent(mary, sophia).
+parent(mary, ethan).
+parent(emily, sophia).
+parent(emily, ethan).
+
+% Rules to define family relationships
+father(Father, Child) :-
+    parent(Father, Child),
+    male(Father).
+
+mother(Mother, Child) :-
+    parent(Mother, Child),
+    female(Mother).
+
+% Male and female predicates (can be expanded)
+male(john).
+male(liam).
+male(ethan).
+
+female(anna).
+female(mary).
+female(emma).
+female(sophia).
+female(emily).
+
+% Rules to define grandparent and sibling relationships
+grandparent(Grandparent, Grandchild) :-
+    parent(Grandparent, Parent),
+    parent(Parent, Grandchild).
+
+sibling(Sibling1, Sibling2) :-
+    parent(Parent, Sibling1),
+    parent(Parent, Sibling2),
+    Sibling1 \= Sibling2.
+
