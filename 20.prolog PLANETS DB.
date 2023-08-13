@@ -1,0 +1,19 @@
+% Facts representing planets and their properties
+planet(mercury, rocky, small, hot).
+planet(venus, rocky, medium, hot).
+planet(earth, rocky, medium, moderate).
+planet(mars, rocky, small, cold).
+planet(jupiter, gas_giant, large, very_cold).
+planet(saturn, gas_giant, large, very_cold).
+planet(uranus, ice_giant, medium, extremely_cold).
+planet(neptune, ice_giant, medium, extremely_cold).
+
+% Rules to categorize planets
+terrestrial(Planet) :-
+    planet(Planet, rocky, _, _).
+
+gas_giant(Planet) :-
+    planet(Planet, gas_giant, _, _).
+
+ice_giant(Planet) :-
+    planet(Planet, ice_giant, _, _).
