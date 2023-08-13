@@ -1,0 +1,25 @@
+% Facts representing symptoms of diseases
+symptom(cold, sneezing).
+symptom(cold, runny_nose).
+symptom(cold, sore_throat).
+symptom(cold, mild_fever).
+
+symptom(flu, high_fever).
+symptom(flu, body_aches).
+symptom(flu, cough).
+symptom(flu, fatigue).
+
+% Rule to diagnose diseases based on symptoms
+diagnose(Disease) :-
+    findall(Symptom, symptom(Disease, Symptom), Symptoms),
+    check_symptoms(Symptoms).
+
+check_symptoms([]).
+check_symptoms([Symptom|Rest]) :-
+    write('Do you have '), write(Symptom), write('? (yes/no): '),
+    read(Answer),
+    (Answer = yes -> true ; Answer = no),
+    check_symptoms(Rest).
+
+% Query to diagnose diseases
+% ?- diagnose(Disease).
